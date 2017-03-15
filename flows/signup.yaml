@@ -1,0 +1,54 @@
+name: signup
+states:
+    welcome:
+        component: meya.text
+        properties:
+            text: Hi, thanks for signing up!
+    need_help?:
+        component: meya.input_string
+        properties:
+            text: "Let me know if you need any help."
+            output: user_question
+    offer_help:
+        component: response_switch
+        transitions:
+            tag: tag_response
+            p_code: p_code_response
+            tag_placement: tag_placement_response
+            email: email_response
+            welcome: welcome_response
+            say_hello: say_hello_response
+    tag_response:
+        component: meya.text
+        properties:
+            text: "The tag is the snippet of code in the box under \"Or install manually\". To copy the tag, click anywhere in the box and it will highlight the snippet!"
+        transitions:
+            next: need_help?
+    p_code_response:
+        component: meya.text
+        properties:
+            text: "You can find your p-code at this link: \n https://www.quantcast.com/measure/home#pcode"
+        transitions:
+            next: need_help?
+    tag_placement_response:
+        component: meya.text
+        properties:
+            text: "You can put the tag in any piece of code that is included on all of your site's pages. Check out this video - or forward it to your developer - for a quick walk-through: https://vimeo.com/202825003"
+        transitions:
+            next: need_help?
+    email_response:
+        component: meya.text
+        properties:
+            text: "That's a great question! I'm not sure of the answer. I've forwarded your question to a human, and you should get an email with an answer in 3-5 hours!"
+        return: true
+    welcome_response:
+        component: meya.text
+        properties:
+            text: "You're welcome!"
+        return: true
+    say_hello_response:
+        component: meya.text
+        properties:
+            text: "Hello!"
+        transitions:
+            next: need_help?
