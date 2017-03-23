@@ -1,0 +1,35 @@
+name: tag_placement
+states:
+    input_state:
+        component: meya.input_string
+        properties:
+            text: Do you have access to your site's HTML? (Yes or No)
+            output: answer
+            scope: flow
+    switch_state:
+        component: access
+        transitions:
+            access: access_response
+            no_access: no_access_response
+    access_response:
+        component: meya.text
+        properties:
+            text: >
+                You can put the tag in any piece of code that is included
+                on all of your site's pages. Check out this video for a
+                quick walk-through: https://vimeo.com/202825003
+    access_response_2:
+        component: meya.text
+        properties:
+            text: >
+                For more information, you can reference the implementation
+                guide, found here:
+                https://www.quantcast.com/help/guides/get-quantified-web-measurement/
+            return: true
+    no_access_response:
+        component: meya.text
+        properties:
+            text: >
+                Send this guide to your developer, or whoever has access to your
+                site's HTML code:
+                https://www.quantcast.com/help/guides/get-quantified-web-measurement/

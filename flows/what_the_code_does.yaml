@@ -1,0 +1,10 @@
+name: what_the_code_does
+states:
+    first:
+        component: meya.text
+        properties:
+            text: >
+                The asynchronous tag ensures that the quant.js file
+                (a core component of Quantcast Measure) loads in the background
+                a single time, upon the first pageview of each session. The tag
+                pushes notification of subsequent pageviews via the _qevents array.

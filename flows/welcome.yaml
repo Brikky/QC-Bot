@@ -1,0 +1,11 @@
+name: welcome
+states:
+    first:
+        component: meya.random_text
+        properties:
+            responses:
+                - No problem!
+                - You're welcome!
+                - Glad to help.
+                - Let me know if you need anymore help.
+                - Thanks for using Quantcast!

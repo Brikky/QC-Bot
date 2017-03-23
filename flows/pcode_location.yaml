@@ -1,0 +1,8 @@
+name: pcode_location
+states:
+    p_code_response:
+        component: meya.text
+        properties:
+            text: >
+                "You can find your p-code at this link:
+                https://www.quantcast.com/measure/home\#pcode"

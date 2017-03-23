@@ -1,0 +1,9 @@
+name: tag_location
+states:
+    tag_response:
+        component: meya.text
+        properties:
+            text: >
+                "The tag is the snippet of code in the box under
+                "Or install manually". To copy the tag, click
+                anywhere in the box and it will highlight the snippet!"

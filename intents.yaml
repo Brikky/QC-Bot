@@ -1,2 +1,50 @@
--   flow: signup
-    intent: meya.start_chat
+-   flow: email_response
+    intent: meya.catchall
+-   flow: greeting
+    intent: meya.regex
+    settings:
+        capture_text: true
+        ignorecase: true
+        pattern: hi|hello|hey
+-   flow: pcode_location
+    intent: meya.regex
+    priority: 10
+    settings:
+        capture_text: true
+        ignorecase: true
+        pattern: pcode|p-code
+-   flow: tag_location
+    intent: meya.regex
+    priority: 4
+    settings:
+        capture_text: true
+        ignorecase: true
+        pattern: (where|find|what).+(tag|code|pixel)
+-   flow: tag_placement
+    intent: meya.regex
+    priority: 5
+    settings:
+        capture_text: true
+        ignorecase: true
+        pattern: (place|put|paste|insert|where does|add|install).+(tag|code|pixel)
+-   flow: welcome
+    intent: meya.regex
+    priority: 1
+    settings:
+        capture_text: true
+        ignorecase: true
+        pattern: thanks|thank you|awesome|cool|got it|understood
+-   flow: what_is_quantcast
+    intent: meya.regex
+    settings:
+        capture_text: true
+        ignorecase: true
+        pattern: what is quantcast|what do you do|what does quantcast do
+-   flow: what_the_code_does
+    intent: meya.regex
+    priority: 10
+    settings:
+        capture_text: true
+        ignorecase: true
+        pattern: how does the tag work|what does the tag do|how does the code work|what
+            does the code do|what does this tag do|what does this code do

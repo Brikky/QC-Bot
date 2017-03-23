@@ -1,0 +1,10 @@
+name: what_is_quantcast
+states:
+    first:
+        component: meya.text
+        properties:
+            text: > 
+                Quantcast provides advertising solutions through big data.
+                We are focused on using machine learning to better understand
+                who digital audiences are and how they behave to help marketers
+                better understand and reach their target audiences.
