@@ -1,4 +1,4 @@
-name: tag_placement
+name: instructions_wix
 states:
     input_state:
         component: meya.input_string
@@ -16,7 +16,7 @@ states:
         properties:
             text: >+
                 You can put the tag in any piece of code that is included
-                on every page of your website. Check out this guide for more detailed
+                on all of your site's pages. Check out this guide for more detailed
                 instructions:
                 
                 

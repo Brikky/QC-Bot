@@ -1,9 +1,10 @@
 name: email_response
 states:
-    email_response:
-        component: meya.text
+    transfer:
+        component: human.transfer
         properties:
             text: >
-                "That's a great question! I'm not sure of the answer.
+                That's a great question! I'm not sure of the answer.
                 I've forwarded your question to a human, and someone
-                will get back to you ASAP!"
+                will get back to you ASAP!
+            assignee: "Dante Orlando"

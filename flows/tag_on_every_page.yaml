@@ -1,0 +1,16 @@
+name: tag_on_every_page
+states:
+    first:
+        component: meya.text
+        properties:
+            text: >
+                Yes, the tag needs to be included on every page that you want to track.
+                We recommend adding the tag to your header or footer, since these are
+                typically included on every page.
+    second:
+        component: meya.text
+        properties:
+            text: >+
+                You can find instructions for tag implementation here:
+                
+                http://bit.ly/quantcast-implementation

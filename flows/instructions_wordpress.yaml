@@ -1,0 +1,10 @@
+name: instructions_wordpress
+states:
+    first:
+        component: meya.text
+        properties:
+            text: >+
+                You can find instructions for installing Quantcast Measure for 
+                Wordpress at this link:
+            
+                http://bit.ly/wordpress-instructions

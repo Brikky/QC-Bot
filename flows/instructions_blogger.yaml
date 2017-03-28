@@ -1,0 +1,10 @@
+name: instructions_blogger
+states:
+    first:
+        component: meya.text
+        properties:
+            text: >+
+                You can find instructions for installing Quantcast Measure for 
+                Blogger at this link:
+            
+                http://bit.ly/blogger-instructions

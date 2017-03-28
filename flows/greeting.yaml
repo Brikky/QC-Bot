@@ -3,4 +3,4 @@ states:
     say_hello_response:
         component: meya.text
         properties:
-            text: "Hello!"
+            text: Hello!

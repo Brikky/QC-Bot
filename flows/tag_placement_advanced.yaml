@@ -1,0 +1,12 @@
+name: tag_placement_advanced
+states:
+    first:
+        component: meya.text
+        properties:
+            text: >+
+                You can put the tag in any piece of code that is included
+                on every page of your website. Check out this guide for more detailed
+                instructions:
+                
+                
+                https://www.quantcast.com/help/guides/get-quantified-web-measurement/

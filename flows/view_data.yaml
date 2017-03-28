@@ -1,0 +1,39 @@
+name: view_data
+states:
+    input_state:
+        component: meya.input_string
+        properties:
+            text: Do you want to view data for your own site, or for a public site?
+            output: own_or_public
+            scope: flow
+    own_or_public_state:
+        component: own_or_public
+        transitions:
+            own: own_state
+            public: public_state
+    own_state:
+        component: meya.text
+        properties:
+            text: >
+                If you've already Quantified, your data will be available at
+                https://www.quantcast.com/measure/home#data
+                After 2-3 days.
+    own_state2:
+        component: meya.text
+        properties:
+            text: >
+                If you haven't already Quantified, you'll need to make an account
+                for Quantcast Measure, and install the tag on your website. You can
+                sign up at https://www.quantcast.com/user/signup
+        return: true
+    public_state:
+        component: meya.text
+        properties:
+            text: >+
+                To search for a public profile, click on "Explore" at the top of the
+                page, type in any website, and hit enter or return.
+                
+                
+                Check out an example here: 
+                
+                https://www.quantcast.com/urbandictionary.com

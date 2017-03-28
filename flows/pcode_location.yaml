@@ -4,5 +4,5 @@ states:
         component: meya.text
         properties:
             text: >
-                "You can find your p-code at this link:
-                https://www.quantcast.com/measure/home\#pcode"
+                You can find your p-code at this link:
+                https://www.quantcast.com/measure/home\#pcode

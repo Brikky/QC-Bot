@@ -1,0 +1,26 @@
+name: dont_see_data
+states:
+    input_state:
+        component: meya.input_string
+        properties:
+            text: >+
+                Do you see data when you visit this link?
+                https://www.quantcast.com/measure/home#data
+            output: see_data
+        scope: flow
+    switch_state:
+        component: data
+        transitions:
+            yes_data: yes_data
+            no_data: no_data
+    yes_data:
+        component: meya.text
+        properties:
+            text: Great! Make sure you bookmark that page for easy access in the future.
+        return: true
+    no_data:
+        component: meya.text
+        properties:
+            text: >
+                Hmm, I'll need to take a look at your account.
+                Someone will follow up with an email ASAP.

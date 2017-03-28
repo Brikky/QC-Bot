@@ -3,7 +3,7 @@ states:
     first:
         component: meya.text
         properties:
-            text: > 
+            text: >
                 Quantcast provides advertising solutions through big data.
                 We are focused on using machine learning to better understand
                 who digital audiences are and how they behave to help marketers
