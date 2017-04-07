@@ -1,3 +1,9 @@
+-   flow: data_visibility
+    intent: meya.regex
+    settings:
+        capture_text: true
+        ignorecase: true
+        pattern: (my).+(data).+(private|public|visible|viewable)|(view|see).+(my).+(data)
 -   flow: dont_see_data
     intent: meya.regex
     priority: 6
@@ -12,19 +18,21 @@
     settings:
         capture_text: true
         ignorecase: true
-        pattern: hi$|hello$|hey$|greetings$
+        pattern: hi$|hello$|hey$|greetings$|hi dante$|hey dante$|hello dante$
 -   flow: instructions_blogger
-    intent: meya.keyword
+    intent: meya.regex
     priority: 8
     settings:
+        capture_text: true
         ignorecase: true
-        keyword: blogger
+        pattern: blogger
 -   flow: instructions_wix
-    intent: meya.keyword
+    intent: meya.regex
     priority: 8
     settings:
+        capture_text: true
         ignorecase: true
-        keyword: wix
+        pattern: wix
 -   flow: instructions_wordpress
     intent: meya.regex
     priority: 8
@@ -37,7 +45,7 @@
     settings:
         capture_text: true
         ignorecase: true
-        pattern: ok
+        pattern: ok$
 -   flow: pcode_location
     intent: meya.regex
     priority: 10
@@ -79,7 +87,8 @@
     settings:
         capture_text: true
         ignorecase: true
-        pattern: (how|where|view|find|see|look).+(data|information|profile)|(not quantified)
+        pattern: (how|where|view|find|see|look|calculate).+(data|information|profile|numbers|traffic)|(not
+            quantified)|(competitor|competitor's|competitors)
 -   flow: welcome
     intent: meya.regex
     priority: 1

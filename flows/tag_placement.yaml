@@ -1,17 +1,29 @@
 name: tag_placement
 states:
-    input_state:
+    input_state1:
         component: meya.input_string
         properties:
-            text: Do you have access to your site's HTML? (Yes or No)
-            output: answer
+            text: >+
+                    Let me know if you're using one of the following: 
+            
+            
+                    - Wordpress
+                    
+                    
+                    - Blogger
+                    
+                    
+                    - Google Tag Manager
+            output: service
             scope: flow
-    switch_state:
-        component: access
+    service_state:
+        component: service
         transitions:
-            access: access_response
-            no_access: no_access_response
-    access_response:
+            wordpress: wordpress
+            blogger: blogger
+            tag_manager: tag_manager
+            none: default_response
+    default_response:
         component: meya.text
         properties:
             text: >+
@@ -29,3 +41,32 @@ states:
                 Send this guide to your developer, or whoever has access to your
                 site's HTML code:
                 https://www.quantcast.com/help/guides/get-quantified-web-measurement/
+        return: true
+    wordpress:
+        component: meya.text
+        properties:
+            text: >+
+                You can find instructions for installing Quantcast Measure for 
+                Wordpress at this link:
+            
+                http://bit.ly/wordpress-instructions
+        return: true
+    blogger:
+        component: meya.text
+        properties:
+            text: >+
+                You can find instructions for installing Quantcast Measure for 
+                Blogger at this link:
+            
+                http://bit.ly/blogger-instructions
+        return: true
+    tag_manager:
+        component: meya.text
+        properties:
+            text: >+
+                You can find instructions for installing Quantcast Measure for
+                Google Tag Manager at this link:
+                
+                http://bit.ly/tag-manager-instructions
+        return: true
+    

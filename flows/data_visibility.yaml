@@ -1,0 +1,9 @@
+name: data_visibility
+states:
+    first:
+        component: meya.text
+        properties:
+            text: >+
+                All Quantcast profiles are public by default.
+                You can edit this setting at any time by clicking 'Configure'
+                next to your network's name on the Quantcast Dashboard.
