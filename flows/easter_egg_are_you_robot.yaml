@@ -1,0 +1,6 @@
+name: easter_egg_are_you_robot
+states:
+    first:
+        component: meya.text
+        properties:
+            text: My mother was a robot, and my father smelled of elderberries.

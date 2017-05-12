@@ -10,15 +10,35 @@
     settings:
         capture_text: false
         ignorecase: true
-        pattern: (no data)|(isnt|isn't|dont|don't|no).+(data|info)
--   flow: email_response
-    intent: meya.catchall
--   flow: greeting
+        pattern: (how long).+(data)|(no data)|(isnt|isn't|dont|don't|no).+(data|info)
+-   flow: easter_egg_are_you_robot
     intent: meya.regex
     settings:
         capture_text: true
         ignorecase: true
-        pattern: hi$|hello$|hey$|greetings$|hi dante$|hey dante$|hello dante$
+        pattern: (are you a).+(bot|robot)
+-   flow: easter_egg_destroy_humans
+    intent: meya.regex
+    settings:
+        capture_text: true
+        ignorecase: true
+        pattern: destroy all humans
+-   flow: easter_egg_love
+    intent: meya.regex
+    settings:
+        capture_text: true
+        ignorecase: true
+        pattern: I love you
+-   flow: email_response
+    intent: meya.catchall
+-   flow: greeting
+    intent: meya.regex
+    priority: 1
+    settings:
+        capture_text: true
+        ignorecase: true
+        pattern: (?=hi$|hello$|hey$|greetings$|(hi\b)|(hello\b)|(hey\b)|(greetings\b)|(hi,
+            )|(hello, )|(hey, )|(greetings, ))(?=^(?!\W*(\w+\b\W*){10,}$))
 -   flow: instructions_blogger
     intent: meya.regex
     priority: 8
@@ -26,6 +46,13 @@
         capture_text: true
         ignorecase: true
         pattern: blogger
+-   flow: instructions_GTM
+    intent: meya.regex
+    priority: 8
+    settings:
+        capture_text: true
+        ignorecase: true
+        pattern: (how|what|where).+(tag manager)
 -   flow: instructions_wix
     intent: meya.regex
     priority: 8
@@ -42,10 +69,11 @@
         pattern: wordpress
 -   flow: no_response
     intent: meya.regex
+    priority: 2
     settings:
         capture_text: true
         ignorecase: true
-        pattern: ok$
+        pattern: ok|great|awesome|okay
 -   flow: pcode_location
     intent: meya.regex
     priority: 10
@@ -53,6 +81,21 @@
         capture_text: true
         ignorecase: true
         pattern: pcode|p-code
+-   flow: pricing_response
+    intent: meya.regex
+    priority: 4
+    settings:
+        capture_text: true
+        ignorecase: true
+        pattern: (is it free)|(how much do).+(pay|spend)|(how much does)|(how much
+            is)|(cost\b|price\b|expensive\b)
+-   flow: SDK_installation
+    intent: meya.regex
+    priority: 7
+    settings:
+        capture_text: true
+        ignorecase: true
+        pattern: app\b|SDK\b|iOS\b|android\b
 -   flow: tag_location
     intent: meya.regex
     priority: 4
@@ -73,7 +116,8 @@
     settings:
         capture_text: true
         ignorecase: true
-        pattern: (place|put|paste|insert|where does|add|install|implement|what do).+(tag|code|pixel)
+        pattern: (yes$)|(help$)|(how$)|(what do)|(what's next)|(what next)|(whats
+            next)|(place|put|paste|insert|where does|add|install|implement|what do).+(tag|code|pixel)
 -   flow: tag_placement_advanced
     intent: meya.regex
     priority: 8
@@ -81,21 +125,29 @@
         capture_text: true
         ignorecase: true
         pattern: (in).+(body|head|header|footer)
+-   flow: top_sites
+    intent: meya.regex
+    priority: 6
+    settings:
+        capture_text: true
+        ignorecase: true
+        pattern: (top sites)|(top websites)|(top webpages)
 -   flow: view_data
     intent: meya.regex
     priority: 6
     settings:
         capture_text: true
         ignorecase: true
-        pattern: (how|where|view|find|see|look|calculate).+(data|information|profile|numbers|traffic)|(not
-            quantified)|(competitor|competitor's|competitors)
+        pattern: (search).+(site)|(how|where|view|find|see|look|calculate).+(data|information|profile|numbers|traffic)|(not
+            quantified)|(competitor|competitor's|competitors|competitive|particular
+            website)
 -   flow: welcome
     intent: meya.regex
     priority: 1
     settings:
         capture_text: true
         ignorecase: true
-        pattern: thanks|thank you|awesome|cool|got it|understood
+        pattern: thanks|thank you|awesome|cool$|got it$|understood$
 -   flow: what_is_quantcast
     intent: meya.regex
     priority: 3

@@ -1,0 +1,10 @@
+name: easter_egg_love
+states:
+    first:
+        component: meya.text
+        properties:
+            text: I love you too!
+    second:
+        component: meya.text
+        properties:
+            text: As a friend, of course.

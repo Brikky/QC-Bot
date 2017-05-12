@@ -1,26 +1,19 @@
 name: instructions_wix
 states:
-    input_state:
-        component: meya.input_string
-        properties:
-            text: Do you have access to your site's HTML? (Yes or No)
-            output: answer
-            scope: flow
-    switch_state:
-        component: access
-        transitions:
-            access: access_response
-            no_access: no_access_response
-    access_response:
+    wix_response:
         component: meya.text
         properties:
             text: >+
-                You can put the tag in any piece of code that is included
-                on all of your site's pages. Check out this guide for more detailed
-                instructions:
+                To install Quantcast Measure with Wix, navigate to the Wix website
+                editor and add your Quantcast tag as an HTML element. You'll need
+                to attach the HTML element to the Header, so it's included on 
+                every page.
                 
                 
-                https://www.quantcast.com/help/guides/get-quantified-web-measurement/
+                You can find directions for editing your header on Wix here:
+                
+                
+                https://support.wix.com/en/article/changing-the-header-design
         return: true
     no_access_response:
         component: meya.text

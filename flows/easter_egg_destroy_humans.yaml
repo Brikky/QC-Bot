@@ -1,0 +1,6 @@
+name: easter_egg_destroy_humans
+states:
+    first:
+        component: meya.text
+        properties:
+            text: Humans are friends. Not food. 

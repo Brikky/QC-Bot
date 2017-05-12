@@ -1,0 +1,28 @@
+name: SDK_installation
+states:
+    first:
+        component: meya.text
+        properties:
+            text: >+
+                First, go to your dashboard (https://www.quantcast.com) find
+                'Quantify Properties' in the right-hand column, click on 'Add a Mobile App'
+                
+                
+                The SDK will begin downloading automatically.
+    second:
+        component: meya.text
+        properties:
+            text: >+
+                If you're app is for iOS, the instructions for installing our SDK
+                are here:
+                
+                http://bit.ly/quantcast-ios
+                
+                
+                
+                If you're looking for the Android SDK, those instructions are here:
+                
+                
+                http://bit.ly/qc-android
+                
+                

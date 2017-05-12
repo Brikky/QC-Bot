@@ -4,7 +4,7 @@ states:
         component: meya.text
         properties:
             text: >
-                Yes, the tag needs to be included on every page that you want to track.
+                The tag needs to be included on every page that you want to track.
                 We recommend adding the tag to your header or footer, since these are
                 typically included on every page.
     second:

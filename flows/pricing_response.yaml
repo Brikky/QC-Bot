@@ -1,0 +1,7 @@
+name: pricing_response
+states:
+    first:
+        component: meya.text
+        properties:
+            text: >+
+                Quantcast Measure is totally free! 

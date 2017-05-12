@@ -4,23 +4,10 @@ states:
         component: meya.input_string
         properties:
             text: >+
-                Do you see data when you visit this link?
+                Data typically takes 1-3 days to begin populating.
+                
+                
+                You can check this link to see if your data is available.
                 https://www.quantcast.com/measure/home#data
             output: see_data
         scope: flow
-    switch_state:
-        component: data
-        transitions:
-            yes_data: yes_data
-            no_data: no_data
-    yes_data:
-        component: meya.text
-        properties:
-            text: Great! Make sure you bookmark that page for easy access in the future.
-        return: true
-    no_data:
-        component: meya.text
-        properties:
-            text: >
-                Hmm, I'll need to take a look at your account.
-                Someone will follow up with an email ASAP.
